@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.game-grid {
+  display: inline-grid;
+  margin: 30px;
+  grid-template-columns: 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px;
+  border: 1px black solid;
+  max-width: calc(30px*10);
+}
+
+button {
+  width: 30px;
+  height: 30px;
+}
+
+button:disabled {
+  opacity: 0.3;
+}
+
+.Hit{
+  background-color: green;
+}
+
+.Miss{
+  background-color: red;
+}
+
+h1 {
+  animation: App-logo-spin infinite 300ms linear;
+  height: 40vmin;
+  color: red;
+  font-size: 80px;
+}
+
+@keyframes App-logo-spin {
+  from {
+    color: red;
+  }
+  to {
+    color: blue;
+  }
+}
