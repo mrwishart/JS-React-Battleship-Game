@@ -30,7 +30,7 @@ class Game {
       this.updatePlayerPicks();
 
       if (this.isWon()) {
-        PubSub.publish("Game:gameWon", this.currentPlayer);
+        PubSub.publish("Game:gameWon", this.currentPlayer+1);
       }
     }
   }

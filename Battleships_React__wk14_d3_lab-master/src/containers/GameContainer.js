@@ -11,6 +11,7 @@ class GameContainer extends Component {
       playerOneClicks: {},
       playerTwoClicks: {},
       gameWon: false,
+      winningPlayer: null,
       playerOnesTurn: true
     }
     this.currentClick = null;
@@ -26,12 +27,12 @@ class GameContainer extends Component {
     })
 
     PubSub.subscribe("Game:gameWon", (event) => {
-      this.processWin()
+      this.processWin(event.detail)
     })
   }
 
-  processWin(){
-    this.setState({gameWon: true})
+  processWin(winningPlayer){
+    this.setState({gameWon: true, winningPlayer: winningPlayer});
   }
 
   processResult(clickResult){
@@ -88,7 +89,7 @@ class GameContainer extends Component {
       <h2>Jake and Paul's Awesome Skirmish Vessels</h2>
       <GameGrid containerClickHandler={this.handleClick} currentClicks={this.state.playerOneClicks} clickable={this.playerOneGrid()}/>
       <GameGrid containerClickHandler={this.handleClick} currentClicks={this.state.playerTwoClicks} clickable={this.playerTwoGrid()}/>
-      <Win gameWon={this.state.gameWon}/>
+      <Win gameWon={this.state.gameWon} winningPlayer={this.state.winningPlayer}/>
       </Fragment>
     );
   }
